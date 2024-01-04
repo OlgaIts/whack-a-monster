@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Eater&family=Marcellus&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  max-width: 1660px;
+  background: radial-gradient(
+    circle,
+    rgba(57, 36, 141, 1) 0%,
+    rgb(87, 72, 165) 100%
+  );
+  margin: 0;
+  padding: 0 30px;
+  cursor: none;
+  overflow: hidden;
+
+  /* font-family: "Eater", serif;
+  font-family: "Marcellus", serif; */
+}
+
+.cursor {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  width: 80px;
+  height: 80px;
+  background-image: url("../images/hammer.png");
+  background-size: cover;
+  transform: translate(-28px, -28px);
+  transition: transform 0.1s;
+  pointer-events: none;
+}
+
+.cursor.active {
+  transform: translate(-28px, -28px) rotate(-45deg);
+}
+
+.title {
+  font: 400 32px "Eater", serif;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.text-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  gap: 28px;
+}
+
+.text {
+  font: 400 20px "Marcellus", serif;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.field {
+  width: 570px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.hole {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  background-color: rgb(148, 163, 183);
+  box-shadow: inset 0 10px 0px 7px rgba(0, 0, 0, 0.5),
+    inset 0 10px 10px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.goblin {
+  background-image: url("../images/teufel.png");
+  background-size: cover;
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.goblin.show {
+  animation: show 0.3s ease;
+}
+
+@keyframes show {
+  0% {
+    transform: translateY(100%) translateX(-50%);
+  }
+  100% {
+    transform: translateY(0%) translateX(-50%);
+  }
+}
+
+.goblin-hit {
+  background-image: url("../images/teufel-hit.png");
+}
+
+.popup {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: default;
+  z-index: 10;
+}
+.popup.active {
+  display: flex;
+}
+.popup-wrap {
+  width: 50%;
+  height: auto;
+  padding: 25px;
+  background-color: #5748a5;
+  text-align: center;
+}
+
+.popup-title {
+  margin-bottom: 15px;
+  font: 400 30px "Eater", serif;
+  color: #fff;
+}
+.popup-img {
+  display: block;
+  margin: 0 auto 15px auto;
+}
+
+.start {
+  width: 70%;
+  padding: 15px 25px;
+  background-color: #aab0ff;
+  border: 2px solid #fff;
+  font: 400 20px "Marcellus", serif;
+  color: #fff;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.start:hover {
+  background-color: #39d641;
+}
+
+@media (max-width: 650px) {
+  .field {
+    width: 450px;
+    gap: 15px;
+  }
+
+  .hole {
+    width: 100px;
+    height: 100px;
+  }
+  .goblin {
+    width: 94%;
+  }
+}
