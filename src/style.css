@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Eater&family=Marcellus&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Eater&family=Marcellus&display=swap');
 
 *,
 *::after,
@@ -42,12 +42,13 @@ body {
   position: absolute;
   top: 100px;
   left: 100px;
-  width: 80px;
-  height: 80px;
-  background-image: url("../images/hammer.png");
+  width: 30px;
+  height: 100px;
+  background-image: url('./images/Zauberstab.png');
+  background-repeat: no-repeat;
   background-size: cover;
   transform: translate(-28px, -28px);
-  transition: transform 0.1s;
+  transition: transform 0.2s;
   pointer-events: none;
 }
 
@@ -56,7 +57,7 @@ body {
 }
 
 .title {
-  font: 400 32px "Eater", serif;
+  font: 400 32px 'Eater', serif;
   margin-bottom: 10px;
   text-align: center;
   color: #fff;
@@ -70,7 +71,7 @@ body {
 }
 
 .text {
-  font: 400 20px "Marcellus", serif;
+  font: 400 20px 'Marcellus', serif;
   color: #fff;
   text-transform: uppercase;
 }
@@ -96,7 +97,7 @@ body {
 }
 
 .goblin {
-  background-image: url("../images/teufel.png");
+  background-image: url('./images/teufel.png');
   background-size: cover;
   width: 90%;
   height: 90%;
@@ -120,7 +121,7 @@ body {
 }
 
 .goblin-hit {
-  background-image: url("../images/teufel-hit.png");
+  background-image: url('./images/teufel-hit.png');
 }
 
 .popup {
@@ -149,7 +150,7 @@ body {
 
 .popup-title {
   margin-bottom: 15px;
-  font: 400 30px "Eater", serif;
+  font: 400 30px 'Eater', serif;
   color: #fff;
 }
 .popup-img {
@@ -157,20 +158,47 @@ body {
   margin: 0 auto 15px auto;
 }
 
-.start {
+.btn {
   width: 70%;
   padding: 15px 25px;
   background-color: #aab0ff;
   border: 2px solid #fff;
-  font: 400 20px "Marcellus", serif;
+  font: 400 20px 'Marcellus', serif;
   color: #fff;
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
 
-.start:hover {
+.btn:hover {
   background-color: #39d641;
+}
+
+.start-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #5748a5;
+  cursor: default;
+}
+
+.start-game {
+  width: 50%;
+}
+
+.start-text {
+  width: 500px;
+  font: 400 20px/1.7 'Marcellus', serif;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 @media (max-width: 650px) {
@@ -186,4 +214,11 @@ body {
   .goblin {
     width: 94%;
   }
+  .popup-title {
+    font: 400 22px 'Eater', serif;
+  }
+  .btn {
+    font: 400 18px 'Marcellus', serif;
+  }
 }
+
